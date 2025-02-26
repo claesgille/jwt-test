@@ -1,0 +1,11 @@
+package web
+
+templ NewDraw() {
+    <h1>Skapa ny dragning</h1>
+    <form hx-post="/newdraw" hx-target="body" method="POST">
+            <input class="bg-gray-200 text-black p-2 border border-gray-400 rounded-lg"id="name" name="name" type="text"/>
+            <button type="button" class="bg-orange-500 hover:bg-orange-700 text-white py-2 px-4 rounded" hx-get="/" hx-trigger="click" hx-target="#topcontainer">Avbryt</button>
+            <button type="submit" class="bg-orange-500 hover:bg-orange-700 text-white py-2 px-4 rounded">Spara</button>
+    </form>
+}
+		
