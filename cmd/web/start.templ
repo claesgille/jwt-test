@@ -17,7 +17,7 @@ templ StartPage() {
 
 					<hr class="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:via-neutral-400" />
 
-					<ul id="draws" class="p-4 space-y-2" hx-get="/newdraw" hx-trigger="click" hx-target="#mainarea">
+					<ul id="draws" class="p-4 space-y-2" hx-get="/newdraw" hx-trigger="click" hx-target="#mainarea" hx-push-url="true">
 						<li><a class="block py-2 px-4 text-gray-700 hover:bg-gray-300 rounded">Ny dragning</a></li>
 					</ul>
 				</nav>
