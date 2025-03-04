@@ -1,6 +1,10 @@
 package web
 
-templ AllDraws( allDraws []Draw) {
+import (
+    "jwt-test/internal/model"
+)
+
+templ AllDraws( allDraws []model.Draw) {
     for _, draw := range allDraws {
         <li><a hx-get={"/draw/"+draw.Id} hx-target="#mainarea" hx-push-url="true" class="block py-2 px-4 text-gray-700 hover:bg-gray-300 rounded">{ draw.Name }</a></li>
     }

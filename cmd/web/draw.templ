@@ -1,7 +1,11 @@
 package web
 
-templ DrawTemplate( draw *Draw) {
-    <span><h5>Dragning: { draw.Name }</h5> <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Nytt pris</button></span>  
+import (
+    "jwt-test/internal/model"
+)
+
+templ DrawTemplate( draw *model.Draw) {
+    <div class="inline"><span>Dragning: { draw.Name }</span> <span>Status: { draw.Status }</span> <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Nytt pris</button></div>  
     <h5>Status: { draw.Status }</h5>
 
 

@@ -58,6 +58,23 @@ func (s *Server) RegisterRoutes() http.Handler {
 		c.Redirect(http.StatusSeeOther, "/")
 	})
 
+	// Price
+
+	r.GET("/price", func(c *gin.Context) {
+		web.AllDrawsHandler(c.Writer, c.Request)
+	})
+	r.GET("/price/:id", func(c *gin.Context) {
+		id := c.Param("id")
+		web.DrawHandler(id, c.Writer, c.Request)
+	})
+	r.GET("/editprice", func(c *gin.Context) {
+		web.NewDrawsHandler(c.Writer, c.Request)
+	})
+	r.POST("/editprice", func(c *gin.Context) {
+		web.NewDrawFormsHandler(c.Writer, c.Request)
+		c.Redirect(http.StatusSeeOther, "/")
+	})
+
 	return r
 }
 
